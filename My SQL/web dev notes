@@ -1,0 +1,186 @@
+//Make a database:
+CREATE DATABASE database-name;
+
+//Make table with on column of type INT:
+CREATE TABLE table_name (
+  test_column INT
+);
+
+//Change table:
+ALTER TABLE  table_name
+ADD another_column VARCHAR(255);
+
+//VARCHAR(255)
+Means a string with the maximum length of 255 characters
+
+//DROP:
+DROP TABLE table_name;
+
+//Create a table with a column and a column for an ID:
+
+CREATE TABLE bands(
+  id INT NOT NULL AUTO_INCREMENT,    //Tables should have an ID column to uniquley ID them
+  name VARCHAR(255) NOT NULL         //Column NAME is name, NOT NULL means it has to have a name
+  PRIMARY KEY (id)                   //Sets the id column as the primary key               
+)
+
+
+//Create table with FOREIGN KEY:
+
+CREATE TABLE albums (
+id INT NOT NULL AUTO_INCREMENT,
+name VARCHAR(255) NOT NULL,
+release_year INT,            //Can be left out because didnt use NOT NULL
+band_id INT NOT NULL,        //Column
+PRIMARY KEY (id),
+FOREIGN KEY (band_id) REFERENCES bands(id) //REFERENCES id column inside bands table, sql wont let us create an album if we dont give it a band id that does not exist inside of the bands table 
+);
+
+
+//Insert into a table an adding values:
+
+INSERT INTO bands (name)
+VALUES ('Iron Maiden');   //Add a band into the bands table
+
+
+//Insert into table and add multiple values:
+
+INSERT INTO bands (name)
+VALUES ('Deuce'), ('Avenge  Sevenfold'), ('Ankor');
+
+
+//Query data from tables:
+
+SELECT * FROM bands;     //Selecting all columns from bands
+
+//Selecting the first 2 bands 
+
+SELECT * FROM bands LIMIT 2;   //Returns only the first 2 bands created
+
+//Selecting only 1 column:
+
+SELECT name FROM bands;      //Returns only the band column
+
+//Changing names of columns(Just how you select it, does actually change the data):
+
+SELECT id AS 'ID', name AS 'Band Name'
+FROM bands;  //Change id to ID and bands to Band Name
+
+
+//Order by:
+
+SELECT * FROM bands ORDER BY name; //Orders bands by
+SELECT * FROM bands ORDER BY name DESC; //Reverses order
+
+
+//Inserting into albums
+
+INSERT INTO albums ( name, release_year, band_id) //Columns have already been created 
+VALUES ('The Number of the Beasts', 1985, 1), 
+       ('Power Slave', 1984, 2),
+       ('Nightmare', 2018, 2),
+       ('Nightmare', 2010, 3),
+       ('Test Album', NULL, 3);    // release_year is set to null and this is allowed because we didnt add NOT NULL to the release_year column
+
+
+//Select distinct 
+
+SELECT DISTINCT name FROM albums; //Prevents returning duplicate names
+
+
+//UPDATE data:
+
+UPDATE albums 
+SET release_year = 1982  //If WHERE  is not used, every release_year will be changed to 1982
+WHERE id = 1;            //Specifies which albums release_year will be changed
+
+
+//Return specific rows using WHERE
+
+SELECT * FROM albums
+WHERE 	RELEASE_YEAR < 2000;  //Returns only albums released before 2000
+
+
+//WHERE returning items that include
+
+SELECT * FROM albums 
+WHERE name LIKE '%er%';  //Returns any ablbum that has er in it I.E: 'Power Slave'
+
+
+//OR  Same as above but using OR as well
+
+SELECT * FROM albums 
+WHERE name LIKE '%er%' OR band_id = 2;  //Returns Nightmare as well(id: 2)
+
+
+//AND Same as above but using AND 
+
+SELECT * FROM albums
+WHERE release_year = 1984 AND band_id = 2;
+
+//BETWEEN
+
+SELECT * FROM albums 
+WHERE release_year BETWEEN 2000 AND 2018;
+
+
+//IS
+
+SELECT * FROM albums
+WHERE release_year IS NULL;  //Returns albumbs with a NULL release_year
+
+
+//DELETE
+
+DELETE FROM albums WHERE id = 5;    //Deletes album with id:5
+
+
+//JOIN (remeber, this is not permanent, youre just selecting )
+//INNER JOIN IS JOIN
+
+SELECT * FROM bands
+JOIN albums ON bands.id = albums.band_id; //Joins the two tables where bands.id matches the albums.band_id
+
+//LEFT JOIN
+
+SELECT * FROM bands
+LEFT JOIN albums ON bands.id = albums.band_id; 
+//Will return evrything on the left even if it does not have a matching id. bands is on the left and albumsis on the right because we are selecting from bands
+
+
+//RIGHT JOIN:
+
+//Does the opposite of LEFT JOIN, returns eveything from albums
+
+
+//AGGREGATE FUNCTIONS
+
+
+//AVG
+
+SELECT AVG(release_year) FROM albums; //Returns average release_year from albums
+
+//SUM
+
+SELECT SUM(release_year) FROM albums;   //Adds the release_years
+
+//COUNT
+
+SELECT band_id, COUNT(band_id) FROM albums
+GROUP BY band_id;    //Hard to explain, run it on record_company2 in mysql
+
+
+
+
+//WATCH AGAIN TIME STAMP 53:00
+
+SELECT b.name AS band_name, COUNT(a.id) AS num_albums
+
+
+FROM bands AS b
+
+
+LEFT JOIN albums AS a ON b.id = a.band_id
+
+
+GROUP BY b.id;
