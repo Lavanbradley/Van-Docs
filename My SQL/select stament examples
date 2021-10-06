@@ -1,0 +1,42 @@
+
+USE hr;
+
+
+-- 1. Write a query to display the names (firts_name, last_name) using alias name "First Name" and "Last Name"
+
+SELECT first_name AS "First Name", last_name AS "Last Name" FROM employees;
+
+
+-- 2. Write a query to get all employee details from the employee table order by first name, descending
+
+SELECT * FROM employees
+ORDER BY first_name DESC;
+
+-- 3. Write a query that gets the length of all the emplyees names (first_nme, last_name) from employees table.alter
+
+SELECT first_name, last_name, LENGTH(first_name) + LENGTH(last_name) AS'Length of Name' FROM employees;
+
+-- 4. Write a query that selects first 10 records from a table.
+
+SELECT employee_id, first_name, last_name FROM employees limit 10;
+
+-- 5. Write a query to display the name (first_name, last_name, ) and salary for all employees whose salary is not in the range $10,000 through $15,000
+
+SELECT first_name, last_name, salary FROM employees WHERE salary NOT BETWEEN 10000 and 15000 ;
+
+-- 6. Write a query to display the name (first_name, last_name) and department id of all employees in departments  30 or 100 in ascending order
+
+SELECT first_name, last_name, department_id FROM employees WHERE department_id IN (30,100) ORDER BY department_id ASC;
+
+-- 7. Write a query to display the name (first_name, last_name) and salary for all employees whose salary is not in the range of 10,000 through 15000 and are in department 30 or 100
+
+SELECT first_name, last_name, salary, department_id FROM employees WHERE salary NOT BETWEEN 10000 AND 15000 AND DEPARTMENT_ID IN(30,100);
+
+-- 8. Write a query to display the name (first_name, last_name) and hire date for all employees whe 
+were hired in 1987
+
+SELECT first_name, last_name, hire_date FROM employees WHERE YEAR (hire_date) LIKE '1987%';
+
+-- 9. Write a query to display the last name, job, and salary for all employees whose job is that of a programmer or a shipping clerk, an salary is not equal to 4500, 10000, 0r 15,000
+
+SELECT last_name, job_id, salary FROM employees WHERE job_id IN ('sh_clerk', 'it_prog') AND salary NOT IN (4500, 10000, 15000);
