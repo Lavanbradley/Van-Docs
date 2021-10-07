@@ -1,0 +1,43 @@
+USE hr;
+
+-- 1. Write a SQL statement to rename the table departments to departments_list.
+
+ALTER TABLE departments RENAME departments_list;
+
+-- 2. Write a SQL statement to add a column region_id to the table locations.
+
+ALTER TABLE locations ADD region_id INT;
+
+-- 3. Write an SQL statement to add a column ID as the first column of the table locations.
+
+ALTER TABLE locations ADD id INT FIRST;
+
+-- 4. Write a SQL statement to drop the column region_id from the table locations.
+
+ALTER TABLE locations DROP region_id;
+
+-- 5. Write a SQL statement to add a column region_id after state_province to the table locations.
+
+ALTER TABLE locations ADD  region_id INT AFTER state_province ;
+
+-- 6. Write a SQL statement to change the datat type of the column country_id from varchar(2) to varchar(5) in the table locations.
+
+ALTER TABLE locations MODIFY country_id VARCHAR(5);
+
+-- 7. Write a SQL statement to change the name of the column state_province to state, keeping the data type and size same.
+
+ALTER TABLE locations CHANGE state_province state VARCHAR(25);
+
+-- 8. Write a SQL statement to drop the exisisting primary KEYS from the table locations on a combination of column: locations_id.
+
+ALTER TABLE locations DROP PRIMARY KEY;
+
+-- 9. Write a SQL statement to  to add a primary key for a combination of columns location_id and country_id.
+
+ALTER TABLE locations ADD PRIMARY KEY (location_id, country_id);
+
+
+
+//Show columns
+
+SHOW COLUMNS FROM locations;
