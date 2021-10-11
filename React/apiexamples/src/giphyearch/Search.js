@@ -10,7 +10,7 @@ const [alt, setAlt] = useState('')
 const fetchImage = (query = initialQuery) => {
   setLoader(true)
   const encodedQuery = encodeURIComponent(query)
-  const url = `http://api.giphy.com/v1/gifs/random?api_key=hOGNSGtB4TI33a2JdGSa82ly2pnS5aB8&tag=${encodedQuery}`
+  const url = `https://api.giphy.com/v1/gifs/random?api_key=hOGNSGtB4TI33a2JdGSa82ly2pnS5aB8&tag=${encodedQuery}`
 
   fetch(url, {
     method: 'GET',
