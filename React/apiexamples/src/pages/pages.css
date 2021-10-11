@@ -4,6 +4,7 @@
 .homeH2p{
   text-align: center;
   font-weight: bold;
+  margin: 50px;
 }
 
 .articleSection {
@@ -28,6 +29,16 @@
   height: 30px;
   margin: auto;
 }
-.homeLinks{
+/* .homeLinks{
   align-items: center;
+} */
+
+.home {
+text-align: center;
+}
+.homeUnder{
+  text-decoration: underline;
+}
+.homeUnder:hover{
+  font-size: larger;
 }
