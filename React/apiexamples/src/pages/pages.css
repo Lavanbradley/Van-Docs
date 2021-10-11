@@ -1,0 +1,33 @@
+.homeH2{
+  text-align: center;
+}
+.homeH2p{
+  text-align: center;
+  font-weight: bold;
+}
+
+.articleSection {
+  border: 1px solid black;
+  margin: 50px;
+  background-color: rgb(255, 251, 251);
+}
+.articleSection li{
+  text-decoration: none;
+  list-style-type: none;
+}
+.homeInput {
+  border-radius: 50px;
+  width: 500px;
+  height: 30px;
+ margin: auto;
+ margin-top: 10px;
+}
+.homeButton {
+  border-radius: 50px;
+  width: 100px;
+  height: 30px;
+  margin: auto;
+}
+.homeLinks{
+  align-items: center;
+}
