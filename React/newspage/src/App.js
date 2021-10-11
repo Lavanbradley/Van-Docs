@@ -24,24 +24,24 @@ const App = () => {
 
 
 
-  useEffect(() => {
-    const fetchArticles = async () => {
-      try {
+  // useEffect(() => {
+  //   const fetchArticles = async () => {
+  //     try {
 
-        const res = await fetch(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${term}&api-key=qTMD0TblA7XarXAkxL1ZWtnc2DSvOtfY`
-        )
-        const articles = await res.json()
-        console.log(articles);
-        setArticles(articles.response.docs)
+  //       const res = await fetch(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${term}&api-key=qTMD0TblA7XarXAkxL1ZWtnc2DSvOtfY`
+  //       )
+  //       const articles = await res.json()
+  //       console.log(articles);
+  //       setArticles(articles.response.docs)
     
-      } catch (error) {
-        console.log(error);
-      }
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
 
-    }
+  //   }
 
-    fetchArticles();
-  }, [term])
+  //   fetchArticles();
+  // }, [term])
 
   
 
