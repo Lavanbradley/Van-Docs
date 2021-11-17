@@ -1,0 +1,31 @@
+CREATE DATABASE test;
+USE test;
+
+CREATE TABLE customer (customer_id INT, first_name VARCHAR(50), last_name VARCHAR(50), status VARCHAR(25));
+
+INSERT INTO customer VALUES
+(101, 'Stephen', 'Jones', 'Active'),
+(102, 'Mark', 'Smith', 'Active'),
+(103, 'Denise', 'King', 'Active'),
+(104, 'Paula', 'Johnson', 'InActive'),
+(105, 'Richard', 'Archer', 'InActive');
+
+SELECT * FROM customer;
+
+CREATE TABLE employee (emp_id INT, first_name VARCHAR(50), last_name VARCHAR(50), emp_status VARCHAR(25));
+
+INSERT INTO employee VALUES
+(1001,'Christina', 'Jones', 'Current'),
+(1002, 'Michael', 'McDonald', 'Current'),
+(1003, 'Paula', 'Johnson', 'Current'),
+(1004, 'Stephen', 'Jones', 'Not Current'),
+(1005, 'Richard', 'Smith', 'Not Current');
+
+CREATE TABLE referer (ref_id INT, first_name VARCHAR(50), last_name VARCHAR(50));
+
+INSERT INTO referer VALUES
+(111, 'Christina', 'McDonald'),
+(222, 'Michael', 'Jones'),
+(333, 'Paula', 'Smith'),
+(444, 'Mark', 'Jones'),
+(555, 'Stephen', 'Smith');

@@ -1,4 +1,3 @@
-
 import React from "react"
 import TodoList from './TodoList'
 import TodoForm from './TodoForm'
@@ -13,16 +12,16 @@ function App() {
 
   return (
     <div className="App">
-      <div><h1 className="todoHeader">Todo List</h1></div>
+      <div><h1 className="todoHeader">CHECK-LIST</h1></div>
      
-      
+      <div className="container">
      <TodoForm/> {/* Passing addTodo to TodoForm  */ }
       
       
       <TodoList  
      
        />  {/* Passing functions to todoList  */ }
-
+    </div>
     </div>
   );
 }

@@ -20,6 +20,8 @@ SELECT Emp.employee_id AS 'Employee ID', Emp.last_name AS 'Employee Last Name', 
 FROM employees Emp JOIN employees Mgr
 ON  (Emp.manager_id = Mgr.employee_id);
 
+
+
 -- 4. Write a query to get the department name and number of employees in the department.
 SELECT department_name AS 'Dept Name' , COUNT(*) AS '# of Employees' FROM
 departments Depts

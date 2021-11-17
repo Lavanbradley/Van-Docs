@@ -1,0 +1,29 @@
+-- Unions****
+USE test;
+
+SELECT first_name, last_name FROM customer
+UNION
+SELECT first_name, last_name FROM employee
+UNION 
+SELECT first_name, last_name FROM referer;
+
+
+
+SELECT 'Customer' AS Recordtype, first_name, last_name FROM customer WHERE status = 'Active'
+UNION
+SELECT 'Employee',first_name, last_name FROM employee WHERE emp_status = 'Current'
+ORDER BY recordtype, first_name, last_name;
+
+
+SELECT emp.emp_id, emp.first_name, emp.last_name, cust.customer_id, cust.first_name, cust.last_name
+FROM employee emp INNER JOIN customer cust
+ON emp.first_name = cust.first_name AND emp.last_name = cust.last_name;
+
+
+-- UNION ALL  DOES NOT REMOVE DUPLICATES****
+
+SELECT 'Customer' AS Recordtype, first_name, last_name FROM customer
+UNION ALL
+SELECT 'Employee', first_name, last_name FROM employee
+UNION ALL
+SELECT 'Referer', first_name, last_name FROM referer;

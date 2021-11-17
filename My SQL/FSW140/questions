@@ -1,0 +1,90 @@
+USE hr;
+
+-- 1. Write a query to display the names (firts_name, last_name) using alias name 
+-- "First Name" and "Last Name"
+
+
+-- 2. Write a query to get all employee details from the employee table order by first name, 
+-- descending
+
+
+-- 3. Write a query that gets the length of all the emplyees names (first_nme, last_name)
+-- from employees table.alter
+
+
+-- 4. Write a query that selects first 10 records from a table.
+
+
+-- 5. Write a query to display the name (first_name, last_name, ) and salary for all employees 
+-- whose salary is not in the range $10,000 through $15,000
+
+
+-- 6. Write a query to display the name (first_name, last_name) and department id of all employees 
+-- in departments  30 or 100 in ascending order
+
+-- 7. Write a query to display the name (first_name, last_name) and salary for all employees whose 
+-- salary is not in the range of 10,000 through 15000 and are in department 30 or 100
+
+
+-- 8. Write a query to display the name (first_name, last_name) and hire date for all employees 
+-- whe were hired in 1987
+
+-- 9. Write a query to display the last name, job, and salary for all employees whose job is that
+-- of a programmer or a shipping clerk, an salary is not equal to 4500, 10000, 0r 15,000
+
+
+-- 1. Write a query to find the name (first_name, lat_name), department ID and name of all the employees.
+
+
+-- 2. Write a query to find the name (first_name, last_name), job, department ID and name of the employees who work in london.
+
+
+-- 3. Write a query to find the  employees id, name (last_name) along with their manager_id and name (last_name).
+
+
+-- 4. Write a query to get the department name and number of employees in the department.
+
+
+-- 5. Write a query to display the department ID and name and first name of manager.
+
+
+-- 6. Write a query to display the job history that were done by any employee who is currently drawing more than 10000
+-- of salary.
+
+-- 7. Write a query to display depatment name, name (first_name, last_name), hire date, salary of the manager for all managers 
+-- whose experience is more than 15 years.
+
+
+-- 1. Write a SQL statement to insert one row into the table countries by providing values for two column: country_id and country_name.
+
+-- 2. Write a SQL statement to insert NULL values against region_id column for a row of countries table.
+
+-- 3. Write a SQL statement to insert 3 rows by a single insert statement. 
+
+
+
+-- 4. Write a SQL statement to create duplicate of countries table name country_new with all structure and data.
+
+-- 5. Write a SQL statement to insert rows from countries table to country_new table.
+-- Pretending country_new is an empty table
+
+
+-- 1. Write a query to get the number of employees with the same job.
+
+
+
+
+-- 2 Write a query to find the manager ID and the salary of the lowest paid employee for that manager.
+
+
+
+-- 3. Write a query to get the average salary for each job ID excluding programmer.
+
+
+
+-- 4. Write a query to get the job ID and maximum salary of the employee where maximum salary is greater than or equal to $4000.
+
+
+
+-- 5. Write a query to get the average salary for all departments employing more than 10 employees.
+

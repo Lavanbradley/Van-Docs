@@ -39,11 +39,11 @@ function TodoForm() { //Adding addTodo as prop from App.js
         <input 
         type="text" 
         value = {formValue}
-        placeholder = 'Add new todo'
+        placeholder = 'YOU WRITE IT YOU DO IT'
         onChange = {handleChange} // This clear the error of screen if there is one
         />
 
-        <button>Add new todo</button>
+        <button>ADD</button>
 
       </div>
 

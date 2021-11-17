@@ -1,6 +1,7 @@
 import Todo from "./Todo";
 import React, { useContext } from "react"
 import { UserContext } from "./UserContext"
+import './App.css';
 function TodoList(){//Prop functions from app.js
 
   const {todos, completeTodo, editTodo, deleteTodo} = useContext(UserContext)
@@ -18,7 +19,7 @@ function TodoList(){//Prop functions from app.js
 
   })
   return(
-    <div>
+    <div className='todo-list'>
       <ul>{listTodos}</ul>
     </div>
   )
